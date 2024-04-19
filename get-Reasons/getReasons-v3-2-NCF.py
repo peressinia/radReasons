@@ -1,29 +1,30 @@
 #!/usr/bin/env Python3
-"""Script to extract MIMIC-CXR radiology report REASON FOR EXAM field."""
+"""Script to extract MIMIC-CXR radiology report REASON FOR EXAM field with NCF filter."""
 #
-# Script:   getReasons-BERT.py
-#               version: 1.0 [adds labels and test/training/validate fields]
-#               version: 1.1 [drop empty NaN reason records, transalte c/o and w/ ]
-#               version: 1.2 [code changed to drop records where index not found for split,CheXert, or NegBio]
-#               version: 2.0 [no case conversion or filtering]
-#               version: 3.0-CUF [added extra 'history' search; CUF: Cased (no case conversion) & UnFiltered (near lines 239-40, 253)]
-#               version: 3.0-NCF [added extra 'history' search; NCF: Not Cased (does conversion to lower) and Filering (near lines 239-40, 253)]
-#               version: 3.1 [added extra 'CLINICAL INFORMATION' search.]
-#               version: 3.2 [changed names CUF -> CNF and added variation NCNF (not cased, not filered); tweaked filter_reason routine]
+# Version:  3.2c [19 Apr 24]
 #
+#   INPUT:  5 files with the results of the grep search 
+#                   'grep-indication.txt', 
+#                   'grep-reasonForExam.txt', 
+#                   'grep-reasonForExamination.txt', 
+#                   'grep-history.txt', 
+#                   'grep-clinicalInfo.txt'
+#           3 files from the MIMIC set
+#                   'mimic-cxr-2.0.0-negbio.csv'
+#                   'mimic-cxr-2.0.0-chexpert.csv'
+#                   'mimic-cxr-2.0.0-split.csv'
 #
+#   OUTPUT: a csv file with results of the NB models.
+#           
+#           
+#   EXAMPLE:    $ getReasons-v3-2-NCF
+#
+#              The above looks for the 8 files list above ...
+#
+#              It creates the file of reasons:
+#                   'mimic-reasons-NCF-v3-2x.csv'
 # 
-# Based on Script:  preProcessRadReps.py
-#                       version:  1.2 [post CBM review of words]
-#                       version:  2.0 [Spr 23 - COSC 6330 BERT Project]
-#                           - remove 'year' and 'old'
-#                           - fix 'CLINICAL INDICATION' being removed
-#                   
-#                   splitXY.py
-#                       version 2.0:
-# 
-#
-#
+
 import sys
 import time
 import os
