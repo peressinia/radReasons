@@ -1,12 +1,26 @@
 #!/usr/bin/env Python3
 """Script to run setup training splits and lables on MIMIC-CXR BOW vectors."""
-# Script:   getSplitsXY-TFIDF
-# Version:  1.0 [20 Mar 23]
-# Version:  2.0 [20 Jan 24] REASON_FILTER_VERSIONS added for getReason-v3-2:  ['NCF', 'NCNF', 'CNF']
-# Version:  2.1 [30 Jan 24]  uses argparse
-#               [22 mar 24] 'CF' added
-# Version:  3.0 [07 Apr 24]  removed mimic splits code
 #
+# Version:  3.0c [19 Apr 24]
+#
+#   INPUT:  3 command line options
+#               - string of reason file version
+#               - integer index from 0-3 indicating reason file version
+#               - integer > 1 indicating number of words in lexicon
+
+#           1 reason file 
+#
+#   OUTPUT: a csv file with the vectorized reasons with of top n terms with frequncy (n = 3rd command line option) 
+#           
+#           
+#   EXAMPLE:    $ getSplitsXY-TFIDF-v3_0c 3-2x 0 50
+#
+#              The above looks for a lexicon file named:
+#                   'BOW-words-top-50-NCF-v3-2x.csv'
+#
+#              Its output files are:
+#                   'xy-all-50-NCF-v3-2x.csv'
+#               
 #
 
 
