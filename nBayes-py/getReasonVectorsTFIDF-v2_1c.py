@@ -1,11 +1,26 @@
 #!/usr/bin/env Python3
-"""Script to produce and associate BOW vectors with MIMIC-CXR reason-for-exam."""
-# Script:   getReasonVectorsTFIDF.py
-# Version:  1.0 [20 Mar 23]
-# Version:  2.0 [20 Jan 24] REASON_FILTER_VERSIONS added for getReason-v3-2:  ['NCF', 'NCNF', 'CNF']
-# Version:  2.1 [30 Jan 24]  uses argparse
-#               [22 mar 24] 'CF' added
-#  
+"""Script to produce and associate TFIDF vectorized reasons for MIMIC-CXR reasons."""
+# Version:  3.0c [19 Apr 24]
+#
+#   INPUT:  3 command line options
+#               - string of reason file version
+#               - integer index from 0-3 indicating reason file version
+#               - integer > 1 indicating number of words in lexicon
+
+#           1 csv file of top n terms with frequncy (n = 3rd command line option) 
+#
+#   OUTPUT: a csv file with the vectorized reasons with of top n terms with frequncy (n = 3rd command line option) 
+#           
+#           
+#   EXAMPLE:    $ getReasonVectorsTFIDF-v2_1c 3-2x 0 50
+#
+#              The above looks for a lexicon file named:
+#                   'BOW-words-top-50-NCF-v3-2x.csv'
+#
+#              Its output files are:
+#                   'reason-vectors-TFIDF-50-NCF-v3-2x.csv'
+#               
+#
 #
 #
 

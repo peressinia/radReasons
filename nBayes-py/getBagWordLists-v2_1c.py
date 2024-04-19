@@ -10,14 +10,15 @@
 
 #           1 reason file 
 #
-#   OUTPUT: lexicon file of all terms with frequncy
+#   OUTPUT: lexicon file of all terms with frequncy, and
 #           lexicon file of top n terms with frequncy (n = 3rd command line option)
 #           
 #   EXAMPLE:    $ getBagWordLists-v2_1c 3-2x 0 50
 #
-#              The above looks for a reason file 
-#              named: 'mimic-reasons-NCF-v3-2x.csv'
-#              Its output files are:
+#              The above looks for a reason file named:
+#                'mimic-reasons-NCF-v3-2x.csv'
+#
+#              It outputs the files:
 #                'BOW-words-all-NCF-v3-2x.csv'
 #                'BOW-words-top-50-NCF-v3-2x.csv'
 #               

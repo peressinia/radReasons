@@ -1,5 +1,5 @@
 #!/usr/bin/env Python3
-"""Script to run setup training splits and lables on MIMIC-CXR BOW vectors."""
+"""Script to setup training splits and lables on MIMIC-CXR BOW vectors."""
 #
 # Version:  3.0c [19 Apr 24]
 #
@@ -8,17 +8,17 @@
 #               - integer index from 0-3 indicating reason file version
 #               - integer > 1 indicating number of words in lexicon
 
-#           1 reason file 
+#           1 csv file with the vectorized reasons 
 #
-#   OUTPUT: a csv file with the vectorized reasons with of top n terms with frequncy (n = 3rd command line option) 
+#   OUTPUT: a csv file with MIMIC splits and CheXpert labels for the vectorized reasons
 #           
 #           
 #   EXAMPLE:    $ getSplitsXY-TFIDF-v3_0c 3-2x 0 50
 #
-#              The above looks for a lexicon file named:
-#                   'BOW-words-top-50-NCF-v3-2x.csv'
+#              The above looks for a vectorized reason file named:
+#                   'reason-vectors-TFIDF-50-NCF-v3-2x.csv'
 #
-#              Its output files are:
+#              It outputs the file:
 #                   'xy-all-50-NCF-v3-2x.csv'
 #               
 #

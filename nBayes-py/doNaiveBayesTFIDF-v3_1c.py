@@ -1,17 +1,26 @@
 #!/usr/bin/env Python3
 """Script to run Naive Bayes (several versions) on MIMIC-CXR TF-IDF vectors."""
-# Script:   doNaiveBayesTFIDF
-# Version:  1.0 [20 Mar 23] uses MIMIC training set for training & MIMIC test set for testing.
-# Version:  2.0 [20 Jan 24] REASON_FILTER_VERSIONS added for getReason-v3-2:  ['NCF', 'NCNF', 'CNF']
-#               uses MIMIC training set for training & MIMIC test set for testing.
-# Version:  2.1 [29 Jan 24] adds lift plots, etc. doNaiveBayes-MultNom-withLift-v2_1.py
-#               [30 Jan 24] uses argparse
-# Version:  2.1x[30 Jan 24] uses all MIMIC data; randomly assigns training/test sets; MIMIC splits NOT used
-# Version:  2.2x[05 Feb 24] added printouts of high prob vector
-# Version:  2.3x [16 Feb 24] added OUT_STAT_FILENAME = './NB-Stat-Tally.csv' to output stats
-# Version:  3.0 [22 Mar 24] based on v2.3;  added final stats (ROC_AUC) to coodinate with do_BERT
-#               added 'CF' option and using only random splits. 
-# Version:  3.1 [02 Apr 24] based on v3.0: fixed TP <-> TN error  
+#
+# Version:  3.1c [19 Apr 24]
+#
+#   INPUT:  3 command line options
+#               - string of reason file version
+#               - integer index from 0-3 indicating reason file version
+#               - integer > 1 indicating number of words in lexicon
+
+#           1 csv file with the vectorized reasons, splits, and labels.
+#
+#   OUTPUT: a csv file with MIMIC splits and CheXpert labels for the vectorized reasons
+#           
+#           
+#   EXAMPLE:    $ doNaiveBayesTFIDF-v3_1c 3-2x 0 50
+#
+#              The above looks for a vectorized reason file named:
+#                   'reason-vectors-TFIDF-50-NCF-v3-2x.csv'
+#
+#              It creates (or appends if it existed) the file:
+#                   'NB-Stat-Tally.csv' 
+#              with the results of the NB models
 #
 #
 
