@@ -3,7 +3,27 @@
 #
 # Version: 3.2c [15 Apr 24] based on v3.2
 #
-#                           
+#   INPUT:  5 command line options
+#               - string of reason file version
+#               - integer index from 0-3 indicating reason file version
+#               - integer index from 0-2 indicating the model
+#               - integer index from 0-1 indicating split type (random, or MIMIC splits)
+#               - integer > 0 for the number of epochs
+#               - integer index from 0-7 indicating the learing rate
+#
+#           1 csv file with the results of the BERT model.
+#
+#   OUTPUT: a csv file with MIMIC splits and CheXpert labels for the vectorized reasons
+#           
+#           
+#   EXAMPLE:    $ doNaiveBayesTFIDF-v3_1c 3-2x 0 50
+#
+#              The above looks for the reason file named:
+#                   'mimic-reasons-NCF-v3-2x.csv'
+#
+#              It creates (or appends if it existed) the file:
+#                   'model-BERT-Stat-Tally.csv' 
+#              with the results of the BERT models
 #
 
 SCRIPT_VERSION = '3-2c'

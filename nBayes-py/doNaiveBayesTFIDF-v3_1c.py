@@ -10,7 +10,7 @@
 
 #           1 csv file with the vectorized reasons, splits, and labels.
 #
-#   OUTPUT: a csv file with MIMIC splits and CheXpert labels for the vectorized reasons
+#   OUTPUT: a csv file with results of the NB models.
 #           
 #           
 #   EXAMPLE:    $ doNaiveBayesTFIDF-v3_1c 3-2x 0 50
