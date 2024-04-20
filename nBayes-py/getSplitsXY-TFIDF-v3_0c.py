@@ -1,5 +1,5 @@
 #!/usr/bin/env Python3
-"""Script to setup training splits and lables on MIMIC-CXR BOW vectors."""
+"""Script to setup training, validation, and test splits for MIMIC-CXR TF-IDF vectors."""
 #
 # Version:  3.0c [19 Apr 24]
 #
@@ -22,7 +22,7 @@
 #                   'xy-all-50-NCF-v3-2x.csv'
 #
 #               NOTE:   This script was originally used to break the reason vector
-#                       file into separate files for use of the MIMIC CRX JPG 
+#                       file into SEPARATE files for use of the MIMIC CRX JPG 
 #                       training, validation, test splits.  (Currently these
 #                       lines are commented out as these splits did not work well
 #                       for the text study here.)
