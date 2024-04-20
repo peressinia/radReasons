@@ -20,9 +20,13 @@
 #
 #              It outputs the file:
 #                   'xy-all-50-NCF-v3-2x.csv'
-#               
 #
-
+#               NOTE:   This script was originally used to break the reason vector
+#                       file into separate files for use of the MIMIC CRX JPG 
+#                       training, validation, test splits.  (Currently these
+#                       lines are commented out as these splits did not work well
+#                       for the text study here.)
+#               
 
 import sys
 import numpy as np  
