@@ -3,18 +3,20 @@
 #
 # Version:  3.2c [19 Apr 24]
 #
-#   INPUT:  5 files with the results of the grep search 
+#   INPUT:  5 files with the results of the GREP search 
 #                   'grep-indication.txt', 
 #                   'grep-reasonForExam.txt', 
 #                   'grep-reasonForExamination.txt', 
 #                   'grep-history.txt', 
 #                   'grep-clinicalInfo.txt'
+#
 #           3 files from the MIMIC set
 #                   'mimic-cxr-2.0.0-negbio.csv'
 #                   'mimic-cxr-2.0.0-chexpert.csv'
 #                   'mimic-cxr-2.0.0-split.csv'
 #
-#   OUTPUT: a csv file with results of the NB models.
+#   OUTPUT: a non-cased, filtered Indications csv file with column headers as follows:
+#           [subject_id, study_id, search_term_code, split, neg_label, chex_label, reason_for_exam]
 #           
 #           
 #   EXAMPLE:    $ getReasons-v3-2-NCF

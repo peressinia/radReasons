@@ -1,7 +1,8 @@
-# !/bin/bash
- 
+# !/bin/bash 
+#
 # Performs GREP searchs of radiology reports.
-
+# Assumes MIMIC datafiles are in ./files
+#
 grep -R ./files -e "INDICATION:" > grep-indication.txt
 grep -R ./files -e "REASON FOR EXAM:" > grep-reasonForExam.txt
 grep -R ./files -e "REASON FOR EXAMINATION:" > grep-reasonForExamination.txt
